@@ -3,7 +3,6 @@ import os
 import sys
 from PIL import Image
 from torchvision import transforms
-from torchvision.transforms import InterpolationMode
 
 sys.path.append(os.getcwd())
 from loader import get_dataset
@@ -54,7 +53,7 @@ def preprocess(data_root):
     eval_dataset = get_dataset("OPABasicDataset", image_size=None, mode_type="eval", data_root=data_root)
     for i in range(len(eval_dataset)):
         index_, filename_, imgid, annid, scid, bbox, scale, label, catnm, bg_img, fg_img, fg_msk, comp_img, comp_msk = eval_dataset[i]
-        comp_img_299 = transforms.Resize((299, 299), interpolation=InterpolationMode.BILINEAR)(comp_img)
+        comp_img_299 = transforms.Resize((299, 299), interpolation=Image.BILINEAR)(comp_img)
         comp_img_299.save(os.path.join(output_dir_299, '{}_{}.jpg'.format(index_, filename_)))
 
 
