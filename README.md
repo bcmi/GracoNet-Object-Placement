@@ -16,7 +16,7 @@ We provide models for TERSE \[[arxiv](https://arxiv.org/abs/1904.05475)\], Place
     <tr style="text-align: right;">
       <th></th>
       <th>method</th>
-      <th>SimOPA acc.</th>
+      <th>acc.</th>
       <th>FID</th>
       <th>LPIPS</th>
       <th>url of model & logs</th>
