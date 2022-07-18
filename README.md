@@ -80,7 +80,7 @@ Install other packages:
 ```
 pip install -r requirements.txt
 ```
-Build faster-rcnn for SimOPA metric evaluation:
+Build faster-rcnn for SimOPA metric evaluation (require GCC 5 or later):
 ```
 cd faster-rcnn/lib
 python setup.py build develop
