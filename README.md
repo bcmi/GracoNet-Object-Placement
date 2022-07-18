@@ -102,7 +102,7 @@ Download and extract OPA dataset from [bcmi cloud](https://cloud.bcmi.sjtu.edu.c
 
 Then, make some preprocessing:
 ```
-python tools/preprocess.py --data_root <PATH_TO_OPA>
+python tool/preprocess.py --data_root <PATH_TO_OPA>
 ```
 You will see some new files and directories:
 ```
