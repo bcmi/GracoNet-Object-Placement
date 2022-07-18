@@ -78,7 +78,7 @@ conda install pytorch==1.9.1 torchvision==0.10.1 torchaudio==0.9.1 cudatoolkit=1
 ```
 Install other packages:
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 Build faster-rcnn for SimOPA metric evaluation:
 ```
