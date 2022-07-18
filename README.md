@@ -48,7 +48,6 @@ We provide models for TERSE \[[arxiv](https://arxiv.org/abs/1904.05475)\], Place
     <tr>
       <th>2</th>
       <td>GracoNet</td>
-      <td>VGG16-BN</td>
       <td>0.847</td>
       <td>27.75</td>
       <td>0.206</td>
