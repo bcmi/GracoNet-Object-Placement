@@ -1,0 +1,15 @@
+cffi
+cython
+easydict
+einops
+imageio
+lpips==0.1.4
+matplotlib
+msgpack
+opencv-python
+pyyaml
+scipy
+tensorboard_logger
+tensorboardX
+torchsummary
+tqdm
