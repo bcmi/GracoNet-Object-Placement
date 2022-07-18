@@ -16,7 +16,6 @@ We provide models for TERSE \[[arxiv](https://arxiv.org/abs/1904.05475)\], Place
     <tr style="text-align: right;">
       <th></th>
       <th>method</th>
-      <th>backbone</th>
       <th>SimOPA acc.</th>
       <th>FID</th>
       <th>LPIPS</th>
@@ -29,22 +28,20 @@ We provide models for TERSE \[[arxiv](https://arxiv.org/abs/1904.05475)\], Place
     <tr>
       <th>0</th>
       <td>TERSE</td>
-      <td>VGG16-BN</td>
       <td>0.718</td>
       <td>57.39</td>
       <td>0</td>
-      <td>[COMING SOON]</td>
+      <td>COMING SOON</td>
       <td>terse.zip</td>
       <td></td>
     </tr>
     <tr>
       <th>1</th>
       <td>PlaceNet</td>
-      <td>VGG16-BN</td>
       <td>0.724</td>
       <td>41.26</td>
       <td>0.198</td>
-      <td>[COMING SOON]</td>
+      <td>COMING SOON</td>
       <td>placenet.zip</td>
       <td></td>
     </tr>
