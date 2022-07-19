@@ -9,8 +9,8 @@ import torchvision.transforms as transforms
 from torchsummary import summary
 import os
 
-from .simopa_cfg import opt
-from .resnet_4ch import resnet
+from simopa_cfg import opt
+from resnet_4ch import resnet
 
 
 # ROI Align
@@ -98,10 +98,14 @@ class ObjectPlaceNet(nn.Module):
     def __init__(self, backbone_pretrained=True):
         super(ObjectPlaceNet, self).__init__()
         resnet_layers = int(opt.backbone.split('resnet')[-1])
-        backbone = resnet(resnet_layers,
-                          opt.without_mask,
-                          backbone_pretrained,
-                          os.path.join(opt.pretrained_model_path, opt.backbone+'.pth'))
+        if backbone_pretrained:
+            backbone = resnet(resnet_layers,
+                              opt.without_mask,
+                              backbone_pretrained,
+                              os.path.join(opt.pretrained_model_path, opt.backbone+'.pth'))
+        else:
+            backbone = resnet(resnet_layers,
+                              opt.without_mask)
         # drop pool layer and fc layer, resnet18 layer4 output shape: b,512,8,8
         features = list(backbone.children())[:-2]
         backbone = nn.Sequential(*features)

@@ -6,9 +6,9 @@ from tqdm import tqdm
 import numpy as np
 import torch
 
-from .simopa_cfg import opt
-from .simopa_dst import ImageDataset
-from .simopa_net import ObjectPlaceNet
+from simopa_cfg import opt
+from simopa_dst import ImageDataset
+from simopa_net import ObjectPlaceNet
 
 
 def evaluate(args):

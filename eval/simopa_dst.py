@@ -7,7 +7,7 @@ import torch
 import torchvision.transforms as transforms
 from torch.utils.data import Dataset
 
-from .simopa_cfg import opt
+from simopa_cfg import opt
 
 
 class ImageDataset(Dataset):
@@ -16,7 +16,7 @@ class ImageDataset(Dataset):
 
         with open(opt.train_data_path if istrain else opt.test_data_path, "r") as f:
             reader = csv.reader(f)
-        reader = list(reader)
+            reader = list(reader)
         title = reader[0]
         annid_index = title.index('annID')
         scid_index = title.index('scID')

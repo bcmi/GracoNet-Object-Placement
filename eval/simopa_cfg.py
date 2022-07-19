@@ -38,6 +38,7 @@ class Config(object):
     geometric_feature_dim = 256
     roi_align_size = 3
     global_feature_size = 8
+    attention_dim_head = 64
 
     # * reference head
     backbone = 'resnet18'
