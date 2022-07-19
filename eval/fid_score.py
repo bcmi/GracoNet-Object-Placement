@@ -49,7 +49,7 @@ except ImportError:
     def tqdm(x):
         return x
 
-from .inception import InceptionV3
+from inception import InceptionV3
 
 parser = ArgumentParser(formatter_class=ArgumentDefaultsHelpFormatter)
 parser.add_argument('--batch-size', type=int, default=50,
