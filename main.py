@@ -33,6 +33,7 @@ def parse_args():
     parser.add_argument("--d_v", type=int, default=64, help="dimension of value in multi-head attention")
     parser.add_argument("--n_heads", type=int, default=8, help="number of heads in multi-head attention")
     parser.add_argument("--len_k", type=int, default=84, help="number of background nodes")
+    parser.add_argument("--with_infer", action='store_true', default=False, help="action to make inference after each training epoch")
     opt = parser.parse_args()
     return opt
 
@@ -93,8 +94,9 @@ def main():
                     sample(sample_dataset, model, epoch * len(train_loader) + i, sample_dir)
 
         opt.epoch = epoch + 1
-        with torch.no_grad():
-            infer(eval_loader, opt, model)
+        if opt.with_infer:
+            with torch.no_grad():
+                infer(eval_loader, opt, model)
 
         save(model_dir, model, opt, logger=logger)
 
