@@ -86,6 +86,10 @@ cd faster-rcnn/lib
 python setup.py build develop
 cd ../..
 ```
+Install pycocotools for SimOPA metric evaluation:
+```
+pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
+```
 
 ## Data preparation
 Download and extract OPA dataset from [bcmi cloud](https://cloud.bcmi.sjtu.edu.cn/sharing/anOViiqDN) or [baidu disk](https://pan.baidu.com/s/1tl0x55osXG5hNdIaW_ysuQ) (code: a2ux). We expect the directory structure to be the following:
