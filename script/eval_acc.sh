@@ -16,7 +16,7 @@ python convert_data.py --expid ${EXPID} --epoch ${EPOCH} --eval_type "eval"
 cd ..
 python eval/simopa_acc.py --checkpoint ${SIMOPA_MODEL} --expid ${EXPID} --epoch ${EPOCH} --eval_type "eval"
 
-### Note off the following lines if you would like to delete faster-rcnn intermediate results ###
+### Uncomment the following lines if you would like to delete faster-rcnn intermediate results ###
 # rm result/${EXPID}/eval/${EPOCH}/eval_roiinfos.csv
 # rm result/${EXPID}/eval/${EPOCH}/eval_fgfeats.npy
 # rm result/${EXPID}/eval/${EPOCH}/eval_scores.npy
