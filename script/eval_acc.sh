@@ -15,8 +15,10 @@ python generate_tsv.py --expid ${EXPID} --epoch ${EPOCH} --eval_type "eval" --cu
 python convert_data.py --expid ${EXPID} --epoch ${EPOCH} --eval_type "eval"
 cd ..
 python eval/simopa_acc.py --checkpoint ${SIMOPA_MODEL} --expid ${EXPID} --epoch ${EPOCH} --eval_type "eval"
-rm result/${EXPID}/eval/${EPOCH}/eval_roiinfos.csv
-rm result/${EXPID}/eval/${EPOCH}/eval_fgfeats.npy
-rm result/${EXPID}/eval/${EPOCH}/eval_scores.npy
-rm result/${EXPID}/eval/${EPOCH}/eval_feats.npy
-rm result/${EXPID}/eval/${EPOCH}/eval_bboxes.npy
+
+### Note off the following lines if you would like to delete faster-rcnn intermediate results ###
+# rm result/${EXPID}/eval/${EPOCH}/eval_roiinfos.csv
+# rm result/${EXPID}/eval/${EPOCH}/eval_fgfeats.npy
+# rm result/${EXPID}/eval/${EPOCH}/eval_scores.npy
+# rm result/${EXPID}/eval/${EPOCH}/eval_feats.npy
+# rm result/${EXPID}/eval/${EPOCH}/eval_bboxes.npy
