@@ -112,6 +112,7 @@ You will see some new files and directories:
 ```
 <PATH_TO_OPA>
   com_pic_testpos299/          # test set positive composite images (resized to 299)
+  train_data_pos.csv           # train annotation for positive samples
   test_data_pos.csv            # test annotation for positive samples
   test_data_pos_unique.csv     # test annotation for positive samples with different fg/bg pairs 
 ```
