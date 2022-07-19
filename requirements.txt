@@ -7,8 +7,8 @@ lpips==0.1.4
 matplotlib
 msgpack
 opencv-python
-pyyaml==5.4.1
-scipy==1.1.0
+pyyaml==5.1
+scipy==1.2.1
 tensorboard_logger
 tensorboardX
 torchsummary
