@@ -76,13 +76,13 @@ Install PyTorch 1.9.1 (require CUDA >= 10.2):
 ```
 conda install pytorch==1.9.1 torchvision==0.10.1 torchaudio==0.9.1 cudatoolkit=10.2 -c pytorch
 ```
+Install necessary packages:
+```
+pip install -r requirements.txt
+```
 Install pycocotools for SimOPA metric evaluation:
 ```
 pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
-```
-Install other necessary packages:
-```
-pip install -r requirements.txt
 ```
 Build faster-rcnn for SimOPA metric evaluation (require GCC 5 or later):
 ```
