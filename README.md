@@ -28,8 +28,8 @@ We provide models for TERSE \[[arxiv](https://arxiv.org/abs/1904.05475)\], Place
     <tr>
       <th>0</th>
       <td>TERSE</td>
-      <td>0.718</td>
-      <td>57.39</td>
+      <td>0.679</td>
+      <td>46.94</td>
       <td>0</td>
       <td>COMING SOON</td>
       <td>terse.zip</td>
@@ -38,9 +38,9 @@ We provide models for TERSE \[[arxiv](https://arxiv.org/abs/1904.05475)\], Place
     <tr>
       <th>1</th>
       <td>PlaceNet</td>
-      <td>0.724</td>
-      <td>41.26</td>
-      <td>0.198</td>
+      <td>0.683</td>
+      <td>36.69</td>
+      <td>0.160</td>
       <td>COMING SOON</td>
       <td>placenet.zip</td>
       <td></td>
