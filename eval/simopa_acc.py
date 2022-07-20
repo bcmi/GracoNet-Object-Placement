@@ -57,11 +57,11 @@ def evaluate(args):
             sample_ids.extend(list(sample_id))
 
     pred_acc = (np.array(pred_labels, dtype=np.int32) == 1).sum() / len(pred_labels)
-    print(" - Evaluate on {} pairs of (fg, bg) images, accuracy={:.4f}".format(total, pred_acc))
+    print(" - Accuracy = {:.3f}".format(pred_acc))
     mark = 'a' if os.path.exists(os.path.join(opt.dataset_path, "{}_acc.txt".format(args.eval_type))) else 'w'
     with open(os.path.join(opt.dataset_path, "{}_acc.txt".format(args.eval_type)), mark) as f:
         f.write("{}\n".format(datetime.datetime.now()))
-        f.write(" - Evaluate on {} pairs of (fg, bg) images, accuracy={:.4f}\n".format(total, pred_acc))
+        f.write(" - Accuracy = {:.3f}\n".format(pred_acc))
 
 
 if __name__ == '__main__':

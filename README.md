@@ -161,8 +161,8 @@ sh script/eval_lpips.sh <YOUR_EXPERIMENT_NAME> <EPOCH_TO_EVALUATE>
 ```
 To collect evaluation results of different metrics, run:
 ```
-python tool/sum_eval.py --expid <YOUR_EXPERIMENT_NAME> --eval_type eval
-python tool/sum_eval.py --expid <YOUR_EXPERIMENT_NAME> --eval_type evaluni
+python tool/summarize.py --expid <YOUR_EXPERIMENT_NAME> --eval_type eval
+python tool/summarize.py --expid <YOUR_EXPERIMENT_NAME> --eval_type evaluni
 ```
 You could find summarized results at ```result/YOUR_EXPERIMENT_NAME/***_resall.txt```.
 

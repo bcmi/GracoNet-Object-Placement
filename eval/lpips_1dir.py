@@ -18,15 +18,15 @@ def main():
     opt = parser.parse_args()
 
     assert (opt.repeat > 1)
+    data_dir = os.path.join('result', opt.expid, opt.eval_type, str(opt.epoch))
+    assert (os.path.exists(data_dir))
 
-    ## Initializing the model
+    # initialize the model
     loss_fn = lpips.LPIPS(net='alex', version=opt.version)
     if (opt.use_gpu):
         loss_fn.cuda()
 
     # crawl directory
-    data_dir = os.path.join('result', opt.expid, opt.eval_type, str(opt.epoch))
-    assert (os.path.exists(data_dir))
     files_list = list(sorted(os.listdir(opt.dir)))
     files_dict = {}
     for filename in files_list:
@@ -55,6 +55,7 @@ def main():
                     dist01 = loss_fn.forward(img0, img1).squeeze().cpu().item()
                 dist_all[index].append(dist01)
 
+    # calculate results
     dist_res = np.zeros((total, 2), dtype=np.float32)
     for i, index in enumerate(dist_all):
         dists = dist_all[index]
@@ -63,11 +64,11 @@ def main():
 
     dist_avg = np.mean(dist_res[:,0])
     dist_stderr = np.mean(dist_res[:,1])
-    print(' - Averaged LPIPS (Variety):  dist = {},  stderr = {}'.format(dist_avg, dist_stderr))
+    print(" - LPIPS (Variety): dist = {:.3f}, stderr = {:.6f}".format(dist_avg, dist_stderr))
     mark = 'a' if os.path.exists(os.path.join(data_dir, "{}_lpips_variety.txt".format(opt.eval_type))) else 'w'
     with open(os.path.join(data_dir, "{}_lpips_variety.txt".format(opt.eval_type)), mark) as f:
         f.write("{}\n".format(datetime.datetime.now()))
-        f.write(" - Averaged LPIPS (Variety):  dist = {},  stderr = {}\n".format(dist_avg, dist_stderr))
+        f.write(" - LPIPS (Variety): dist = {:.3f}, stderr = {:.6f}\n".format(dist_avg, dist_stderr))
 
 
 if __name__ == '__main__':

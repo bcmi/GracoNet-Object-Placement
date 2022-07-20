@@ -2,11 +2,6 @@ import argparse
 import os
 import datetime
 
-dt_ms = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S-%f')
-div_title = '=' * 100
-div_line = '-' * 43
-div_record = '-' * 95
-
 parser = argparse.ArgumentParser()
 parser.add_argument("--expid", type=str, required=True, help="experiment name")
 parser.add_argument("--eval_type", type=str, default="eval", help="evaluation type")
@@ -21,6 +16,12 @@ else:
 
 eval_dir = os.path.join('result', args.expid, args.eval_type)
 assert (os.path.exists(eval_dir))
+
+dt_ms = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S-%f')
+div_title = '=' * 100
+div_line = '-' * 43
+div_record = '-' * 95
+
 eval_resall_file = os.path.join('result', args.expid, '{}_resall.txt'.format(args.eval_type))
 with open(eval_resall_file, 'w') as _out:
     _out.write("{}\nStatistic Time: {}\n".format(div_title, dt_ms))

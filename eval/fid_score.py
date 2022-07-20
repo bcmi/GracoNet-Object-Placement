@@ -31,6 +31,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 """
+import datetime
 import os
 import pathlib
 from argparse import ArgumentDefaultsHelpFormatter, ArgumentParser
@@ -270,6 +271,8 @@ def calculate_fid_given_paths(paths, batch_size, device, dims, num_workers=1):
 
 def main():
     args = parser.parse_args()
+    data_dir = os.path.join('result', args.expid, args.eval_type, str(args.epoch))
+    assert (os.path.exists(data_dir))
 
     if args.device is None:
         device = torch.device('cuda' if (torch.cuda.is_available()) else 'cpu')
@@ -287,17 +290,11 @@ def main():
                                           device,
                                           args.dims,
                                           num_workers)
-    print(' - FID: ', fid_value)
-
-    ### START ADD ###
-    import datetime
-    data_dir = os.path.join('result', args.expid, args.eval_type, str(args.epoch))
-    assert (os.path.exists(data_dir))
+    print(" - FID = {:.2f}".format(fid_value))
     mark = 'a' if os.path.exists(os.path.join(data_dir, "{}_fid.txt".format(args.eval_type))) else 'w'
     with open(os.path.join(data_dir, "{}_fid.txt".format(args.eval_type)), mark) as f:
         f.write("{}\n".format(datetime.datetime.now()))
-        f.write(" - FID: {}\n".format(fid_value))
-    ### END ADD ###
+        f.write(" - FID = {:.2f}\n".format(fid_value))
 
 
 if __name__ == '__main__':
