@@ -1,20 +1,20 @@
 #!/bin/bash
 
-### Calculating SimOPA Accuracy (plausibility) ###
+### Calculating Accuracy (plausibility) ###
 
 ### START USAGE ###
-# sh script/eval_acc.sh ${EXPID} ${EPOCH} ${SIMOPA_MODEL}
+# sh script/eval_acc.sh ${EXPID} ${EPOCH} ${BINARY_CLASSIFIER}
 ### END USAGE ###
 
 EXPID=$1
 EPOCH=$2
-SIMOPA_MODEL=$3
+BINARY_CLASSIFIER=$3
 
 cd faster-rcnn
 python generate_tsv.py --expid ${EXPID} --epoch ${EPOCH} --eval_type "eval" --cuda
 python convert_data.py --expid ${EXPID} --epoch ${EPOCH} --eval_type "eval"
 cd ..
-python eval/simopa_acc.py --checkpoint ${SIMOPA_MODEL} --expid ${EXPID} --epoch ${EPOCH} --eval_type "eval"
+python eval/simopa_acc.py --checkpoint ${BINARY_CLASSIFIER} --expid ${EXPID} --epoch ${EPOCH} --eval_type "eval"
 
 ### Uncomment the following lines if you would like to delete faster-rcnn intermediate results ###
 # rm result/${EXPID}/eval/${EPOCH}/eval_roiinfos.csv

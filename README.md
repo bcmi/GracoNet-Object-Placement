@@ -3,7 +3,7 @@
 
 Official PyTorch Implementation for **GracoNet** (**GRA**ph **CO**mpletion **NET**work).
 
-We treat object placement as a graph completion problem and propose a novel graph completion module (GCM). The background scene is represented by a graph with multiple nodes at different spatial locations with various receptive fields. The foreground object is encoded as a special node that should be inserted at a reasonable place in this graph. We also design a dual-path framework upon GCM to fully exploit annotated composite images, which successfully generates plausible and diversified object placement. GracoNet achieves **0.847** SimOPA accuracy on OPA dataset.
+We treat object placement as a graph completion problem and propose a novel graph completion module (GCM). The background scene is represented by a graph with multiple nodes at different spatial locations with various receptive fields. The foreground object is encoded as a special node that should be inserted at a reasonable place in this graph. We also design a dual-path framework upon GCM to fully exploit annotated composite images, which successfully generates plausible and diversified object placement. GracoNet achieves **0.847** accuracy on OPA dataset.
 
 ![GracoNet](.github/GracoNet.png)
 
@@ -80,11 +80,11 @@ Install necessary packages:
 ```
 pip install -r requirements.txt
 ```
-Install pycocotools for SimOPA metric evaluation:
+Install pycocotools for accuracy evaluation:
 ```
 pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 ```
-Build faster-rcnn for SimOPA metric evaluation (require GCC 5 or later):
+Build faster-rcnn for accuracy metric evaluation (require GCC 5 or later):
 ```
 cd faster-rcnn/lib
 python setup.py build develop
@@ -147,9 +147,9 @@ python infer.py --expid graconet --epoch 11 --eval_type evaluni --repeat 10
 ```
 
 ## Evaluation
-We extend [SimOPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) as a binary classifier to distingush between reasonable and unreasonable object placements. To evaluate SimOPA accuracy, please 1) download the faster-rcnn model pretrained on visual genome from this [link](https://drive.google.com/file/d/18n_3V1rywgeADZ3oONO0DsuuS9eMW6sN/view) (provided by [Faster-RCNN-VG](https://github.com/shilrley6/Faster-R-CNN-with-model-pretrained-on-Visual-Genome)) to ```faster-rcnn/models/faster_rcnn_res101_vg.pth```, 2) download the pretrained binary classifier model from [bcmi cloud](https://cloud.bcmi.sjtu.edu.cn/sharing/XPEgkSHdQ) or [baidu disk](https://pan.baidu.com/s/1skFRfLyczzXUpp-6tMHArA) (code: 0qty) to ```SIMOPA_MODEL_PATH```, and 3) run:
+We extend [SimOPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) as a binary classifier to distingush between reasonable and unreasonable object placements. To evaluate accuracy via the classifier, please 1) download the faster-rcnn model pretrained on visual genome from this [link](https://drive.google.com/file/d/18n_3V1rywgeADZ3oONO0DsuuS9eMW6sN/view) (provided by [Faster-RCNN-VG](https://github.com/shilrley6/Faster-R-CNN-with-model-pretrained-on-Visual-Genome)) to ```faster-rcnn/models/faster_rcnn_res101_vg.pth```, 2) download the pretrained binary classifier model from [bcmi cloud](https://cloud.bcmi.sjtu.edu.cn/sharing/XPEgkSHdQ) or [baidu disk](https://pan.baidu.com/s/1skFRfLyczzXUpp-6tMHArA) (code: 0qty) to ```BINARY_CLASSIFIER_PATH```, and 3) run:
 ```
-sh script/eval_acc.sh <YOUR_EXPERIMENT_NAME> <EPOCH_TO_EVALUATE> <SIMOPA_MODEL_PATH>
+sh script/eval_acc.sh <YOUR_EXPERIMENT_NAME> <EPOCH_TO_EVALUATE> <BINARY_CLASSIFIER_PATH>
 ```
 To evaluate FID score, run:
 ```
