@@ -84,7 +84,7 @@ Install pycocotools for accuracy evaluation:
 ```
 pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 ```
-Build faster-rcnn for accuracy metric evaluation (require GCC 5 or later):
+Build faster-rcnn for accuracy evaluation (require GCC 5 or later):
 ```
 cd faster-rcnn/lib
 python setup.py build develop
