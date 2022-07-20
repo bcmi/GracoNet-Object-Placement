@@ -57,24 +57,11 @@ def evaluate(args):
             sample_ids.extend(list(sample_id))
 
     pred_acc = (np.array(pred_labels, dtype=np.int32) == 1).sum() / len(pred_labels)
-    pred_dic = {}
-    for _id, _label in zip(sample_ids, pred_labels):
-        if _id in pred_dic:
-            pred_dic[_id].append(_label)
-        else:
-            pred_dic[_id] = [_label]
-    pred_acc_list = []
-    for _, _label_list in pred_dic.items():
-        id_acc = (np.array(_label_list, dtype=np.int32) == 1).sum() / len(_label_list)
-        pred_acc_list.append(id_acc)
-    pred_acc_no_replica = sum(pred_acc_list) / len(pred_acc_list)
-    print(" - Evaluate on {} pairs of (fg, bg) images, pred_acc={:.4f}".format(total, pred_acc))
-    print(" - Evaluate on {} (no_replica) pairs of (fg, bg) images, pred_acc={:.4f}".format(len(pred_acc_list), pred_acc_no_replica))
+    print(" - Evaluate on {} pairs of (fg, bg) images, accuracy={:.4f}".format(total, pred_acc))
     mark = 'a' if os.path.exists(os.path.join(opt.dataset_path, "{}_acc.txt".format(args.eval_type))) else 'w'
     with open(os.path.join(opt.dataset_path, "{}_acc.txt".format(args.eval_type)), mark) as f:
         f.write("{}\n".format(datetime.datetime.now()))
-        f.write(" - Evaluate on {} pairs of (fg, bg) images, pred_acc={:.4f}\n".format(total, pred_acc))
-        f.write(" - Evaluate on {} (no_replica) pairs of (fg, bg) images, pred_acc={:.4f}\n".format(len(pred_acc_list), pred_acc_no_replica))
+        f.write(" - Evaluate on {} pairs of (fg, bg) images, accuracy={:.4f}\n".format(total, pred_acc))
 
 
 if __name__ == '__main__':

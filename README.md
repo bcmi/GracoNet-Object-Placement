@@ -164,7 +164,7 @@ To collect evaluation results of different metrics, run:
 python tool/sum_eval.py --expid <YOUR_EXPERIMENT_NAME> --eval_type eval
 python tool/sum_eval.py --expid <YOUR_EXPERIMENT_NAME> --eval_type evaluni
 ```
-You will find results summarized under ```result/YOUR_EXPERIMENT_NAME/```.
+You could find summarized results at ```result/YOUR_EXPERIMENT_NAME/***_resall.txt```.
 
 
 # Acknowledgement
