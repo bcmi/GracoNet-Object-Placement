@@ -151,11 +151,11 @@ We extend [SimOPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-O
 ```
 sh script/eval_acc.sh <YOUR_EXPERIMENT_NAME> <EPOCH_TO_EVALUATE> <BINARY_CLASSIFIER_PATH>
 ```
-To evaluate FID score, run:
+To evaluate [FID](https://github.com/mseitzer/pytorch-fid) score, run:
 ```
 sh script/eval_fid.sh <YOUR_EXPERIMENT_NAME> <EPOCH_TO_EVALUATE> <PATH_TO_OPA/com_pic_testpos299>
 ```
-To evaluate LPIPS score, run:
+To evaluate [LPIPS](https://github.com/richzhang/PerceptualSimilarity) score, run:
 ```
 sh script/eval_lpips.sh <YOUR_EXPERIMENT_NAME> <EPOCH_TO_EVALUATE>
 ```
