@@ -107,7 +107,7 @@ Download and extract OPA dataset from [bcmi cloud](https://cloud.bcmi.sjtu.edu.c
   test_data.csv      # test annotation
 ```
 
-**Note**: The above directory structure is different from the officially released [[OPA]](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) dataset. However, the two versions are essentially the same.
+**Note**: The above directory structure is different from the officially released [OPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) dataset. However, the two versions are essentially the same.
 
 Then, make some preprocessing:
 ```
