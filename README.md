@@ -107,7 +107,7 @@ Download and extract OPA dataset from [bcmi cloud](https://cloud.bcmi.sjtu.edu.c
   test_data.csv      # test annotation
 ```
 
-**Note**: The above directory structure is different from the officially released OPA dataset [[Github]](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) [[arXiv]](https://arxiv.org/pdf/2107.01889.pdf). However, the two versions are essentially the same.
+**Note**: The above directory structure is different from the officially released [[OPA]](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) dataset. However, the two versions are essentially the same.
 
 Then, make some preprocessing:
 ```
@@ -152,7 +152,7 @@ python infer.py --expid graconet --epoch 11 --eval_type evaluni --repeat 10
 ```
 
 ## Evaluation
-We extend [SimOPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) as a binary classifier to distingush between reasonable and unreasonable object placements. To evaluate accuracy via the classifier, please 1) download the faster-rcnn model pretrained on visual genome from this [link](https://drive.google.com/file/d/18n_3V1rywgeADZ3oONO0DsuuS9eMW6sN/view) (provided by [Faster-RCNN-VG](https://github.com/shilrley6/Faster-R-CNN-with-model-pretrained-on-Visual-Genome)) to ```faster-rcnn/models/faster_rcnn_res101_vg.pth```, 2) download the pretrained binary classifier model from [bcmi cloud](https://cloud.bcmi.sjtu.edu.cn/sharing/XPEgkSHdQ) or [baidu disk](https://pan.baidu.com/s/1skFRfLyczzXUpp-6tMHArA) (code: 0qty) to ```BINARY_CLASSIFIER_PATH```, and 3) run:
+We extend [SimOPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) as a binary classifier to distingush between reasonable and unreasonable object placements. To evaluate accuracy via the classifier, please 1) download the faster-rcnn model pretrained on visual genome from [google drive](https://drive.google.com/file/d/18n_3V1rywgeADZ3oONO0DsuuS9eMW6sN/view) (provided by [Faster-RCNN-VG](https://github.com/shilrley6/Faster-R-CNN-with-model-pretrained-on-Visual-Genome)) to ```faster-rcnn/models/faster_rcnn_res101_vg.pth```, 2) download the pretrained binary classifier model from [bcmi cloud](https://cloud.bcmi.sjtu.edu.cn/sharing/XPEgkSHdQ) or [baidu disk](https://pan.baidu.com/s/1skFRfLyczzXUpp-6tMHArA) (code: 0qty) to ```BINARY_CLASSIFIER_PATH```, and 3) run:
 ```
 sh script/eval_acc.sh <YOUR_EXPERIMENT_NAME> <EPOCH_TO_EVALUATE> <BINARY_CLASSIFIER_PATH>
 ```
