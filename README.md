@@ -3,13 +3,18 @@
 
 Official PyTorch Implementation for **GracoNet** (**GRA**ph **CO**mpletion **NET**work).
 
+> **Learning Object Placement via Dual-path Graph Completion** [[arXiv]](https://arxiv.org/abs/2207.11464)
+>
+> Siyuan Zhou, Liu Liu, Li Niu, Liqing Zhang<br>
+> Accepted by **ECCV2022**.
+
 We treat object placement as a graph completion problem and propose a novel graph completion module (GCM). The background scene is represented by a graph with multiple nodes at different spatial locations with various receptive fields. The foreground object is encoded as a special node that should be inserted at a reasonable place in this graph. We also design a dual-path framework upon GCM to fully exploit annotated composite images, which successfully generates plausible and diversified object placement. GracoNet achieves **0.847** accuracy on OPA dataset.
 
 ![GracoNet](.github/GracoNet.png)
 
 
 # Model Zoo
-We provide models for TERSE \[[arxiv](https://arxiv.org/abs/1904.05475)\], PlaceNet \[[arXiv](https://arxiv.org/abs/1812.02350)\], and our GracoNet:
+We provide models for TERSE [[arXiv]](https://arxiv.org/abs/1904.05475), PlaceNet [[arXiv]](https://arxiv.org/abs/1812.02350), and our GracoNet [[arXiv]](https://arxiv.org/abs/2207.11464):
 
 <table>
   <thead>
@@ -102,7 +107,7 @@ Download and extract OPA dataset from [bcmi cloud](https://cloud.bcmi.sjtu.edu.c
   test_data.csv      # test annotation
 ```
 
-**Note**: The above directory structure is different from the officially released OPA dataset \[ [Github](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) | [arXiv](https://arxiv.org/pdf/2107.01889.pdf) \]. However, the two versions are essentially the same.
+**Note**: The above directory structure is different from the officially released OPA dataset [[Github]](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) [[arXiv]](https://arxiv.org/pdf/2107.01889.pdf). However, the two versions are essentially the same.
 
 Then, make some preprocessing:
 ```
