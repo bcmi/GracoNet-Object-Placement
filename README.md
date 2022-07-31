@@ -171,6 +171,12 @@ python tool/summarize.py --expid <YOUR_EXPERIMENT_NAME> --eval_type evaluni
 ```
 You could find summarized results at ```result/YOUR_EXPERIMENT_NAME/***_resall.txt```.
 
+# Other Resources
+
++ [Awesome-Object-Placement](https://github.com/bcmi/Awesome-Object-Placement)
++ [Awesome-Image-Composition](https://github.com/bcmi/Awesome-Image-Composition)
+
+
 
 # Acknowledgements
 Some of the evaluation codes in this repo are borrowed and modified from [Faster-RCNN-VG](https://github.com/shilrley6/Faster-R-CNN-with-model-pretrained-on-Visual-Genome), [OPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA), [FID-Pytorch](https://github.com/mseitzer/pytorch-fid), and [Perceptual Similarity](https://github.com/richzhang/PerceptualSimilarity). Thanks them for their great work.
