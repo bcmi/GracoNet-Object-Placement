@@ -14,7 +14,7 @@ We treat object placement as a graph completion problem and propose a novel grap
 
 
 # Model Zoo
-We provide models for TERSE [[arXiv]](https://arxiv.org/abs/1904.05475), PlaceNet [[arXiv]](https://arxiv.org/abs/1812.02350), and our GracoNet [[arXiv]](https://arxiv.org/abs/2207.11464):
+We provide models for TERSE [[arXiv]](https://arxiv.org/abs/1904.05475), PlaceNet [[arXiv]](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123580562.pdf), and our GracoNet [[arXiv]](https://arxiv.org/abs/2207.11464):
 
 <table>
   <thead>
