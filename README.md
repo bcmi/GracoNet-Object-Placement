@@ -36,9 +36,9 @@ We provide models for TERSE [[arXiv]](https://arxiv.org/abs/1904.05475), PlaceNe
       <td>0.679</td>
       <td>46.94</td>
       <td>0</td>
-      <td>COMING SOON</td>
+      <td><a href="https://cloud.bcmi.sjtu.edu.cn/sharing/nTCaw7sEo">bcmi cloud</a>&nbsp;|&nbsp;<a href="https://pan.baidu.com/s/14mA7j34flDnpB9-MA7_4IQ">baidu disk</a>&nbsp;(code: js71)</td>
       <td>terse.zip</td>
-      <td></td>
+      <td>51M</td>
     </tr>
     <tr>
       <th>1</th>
@@ -46,9 +46,9 @@ We provide models for TERSE [[arXiv]](https://arxiv.org/abs/1904.05475), PlaceNe
       <td>0.683</td>
       <td>36.69</td>
       <td>0.160</td>
-      <td>COMING SOON</td>
+      <td><a href="https://cloud.bcmi.sjtu.edu.cn/sharing/sJ68J02yV">bcmi cloud</a>&nbsp;|&nbsp;<a href="https://pan.baidu.com/s/1ARGL_Z6cczEAXfEZZvxIjQ">baidu disk</a>&nbsp;(code: y0gh)</td>
       <td>placenet.zip</td>
-      <td></td>
+      <td>86M</td>
     </tr>
     <tr>
       <th>2</th>
@@ -127,6 +127,8 @@ To train GracoNet on a single 24GB gpu with batch size 32 for 11 epochs, run:
 ```
 python main.py --data_root <PATH_TO_OPA> --expid <YOUR_EXPERIMENT_NAME>
 ```
+If you want to reproduce the baseline models, just replace ```main.py``` with ```main_terse.py``` / ```main_placenet.py``` for training.
+
 To see the change of losses dynamically, use TensorBoard:
 ```
 tensorboard --logdir result/<YOUR_EXPERIMENT_NAME>/tblog --port <YOUR_SPECIFIED_PORT>
@@ -138,7 +140,9 @@ To predict composite images from a trained GracoNet model, run:
 python infer.py --expid <YOUR_EXPERIMENT_NAME> --epoch <EPOCH_TO_EVALUATE> --eval_type eval
 python infer.py --expid <YOUR_EXPERIMENT_NAME> --epoch <EPOCH_TO_EVALUATE> --eval_type evaluni --repeat 10
 ```
-For example, if you want to infer our best GracoNet model, please 1) download ```graconet.zip``` given in the model zoo, 2) place it under ```result``` and uncompress it:
+If you want to infer the baseline models, just replace ```infer.py``` with ```infer_terse.py``` / ```infer_placenet.py```.
+
+You could also directly make use of our provided models. For example, if you want to infer our best GracoNet model, please 1) download ```graconet.zip``` given in the model zoo, 2) place it under ```result``` and uncompress it:
 ```
 mv path/to/your/downloaded/graconet.zip result/graconet.zip
 cd result
@@ -150,6 +154,7 @@ and 3) run:
 python infer.py --expid graconet --epoch 11 --eval_type eval
 python infer.py --expid graconet --epoch 11 --eval_type evaluni --repeat 10
 ```
+The procedure of inferring our provided baseline models are similar. Remember to use ```--epoch 11``` for TERSE and ```--epoch 9``` for PlaceNet.
 
 ## Evaluation
 We extend [SimOPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) as a binary classifier to distingush between reasonable and unreasonable object placements. To evaluate accuracy via the classifier, please 1) download the faster-rcnn model pretrained on visual genome from [google drive](https://drive.google.com/file/d/18n_3V1rywgeADZ3oONO0DsuuS9eMW6sN/view) (provided by [Faster-RCNN-VG](https://github.com/shilrley6/Faster-R-CNN-with-model-pretrained-on-Visual-Genome)) to ```faster-rcnn/models/faster_rcnn_res101_vg.pth```, 2) download the pretrained binary classifier model from [bcmi cloud](https://cloud.bcmi.sjtu.edu.cn/sharing/XPEgkSHdQ) or [baidu disk](https://pan.baidu.com/s/1skFRfLyczzXUpp-6tMHArA) (code: 0qty) to ```BINARY_CLASSIFIER_PATH```, and 3) run:
@@ -171,11 +176,11 @@ python tool/summarize.py --expid <YOUR_EXPERIMENT_NAME> --eval_type evaluni
 ```
 You could find summarized results at ```result/YOUR_EXPERIMENT_NAME/***_resall.txt```.
 
+
 # Other Resources
 
 + [Awesome-Object-Placement](https://github.com/bcmi/Awesome-Object-Placement)
 + [Awesome-Image-Composition](https://github.com/bcmi/Awesome-Image-Composition)
-
 
 
 # Acknowledgements
