@@ -137,8 +137,8 @@ tensorboard --logdir result/<YOUR_EXPERIMENT_NAME>/tblog --port <YOUR_SPECIFIED_
 ## Inference
 To predict composite images from a trained GracoNet model, run:
 ```
-python infer.py --expid <YOUR_EXPERIMENT_NAME> --epoch <EPOCH_TO_EVALUATE> --eval_type eval
-python infer.py --expid <YOUR_EXPERIMENT_NAME> --epoch <EPOCH_TO_EVALUATE> --eval_type evaluni --repeat 10
+python infer.py --data_root <PATH_TO_OPA> --expid <YOUR_EXPERIMENT_NAME> --epoch <EPOCH_TO_EVALUATE> --eval_type eval
+python infer.py --data_root <PATH_TO_OPA> --expid <YOUR_EXPERIMENT_NAME> --epoch <EPOCH_TO_EVALUATE> --eval_type evaluni --repeat 10
 ```
 If you want to infer the baseline models, just replace ```infer.py``` with ```infer_terse.py``` / ```infer_placenet.py```.
 
@@ -151,8 +151,8 @@ cd ..
 ```
 and 3) run:
 ```
-python infer.py --expid graconet --epoch 11 --eval_type eval
-python infer.py --expid graconet --epoch 11 --eval_type evaluni --repeat 10
+python infer.py --data_root <PATH_TO_OPA> --expid graconet --epoch 11 --eval_type eval
+python infer.py --data_root <PATH_TO_OPA> --expid graconet --epoch 11 --eval_type evaluni --repeat 10
 ```
 The procedure of inferring our provided baseline models are similar. Remember to use ```--epoch 11``` for TERSE and ```--epoch 9``` for PlaceNet.
 
