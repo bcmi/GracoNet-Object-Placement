@@ -8,7 +8,7 @@ def obtain_opa_data(csv_file):
     csv_data = csv.DictReader(open(csv_file, 'r'))
     res_data = [
         [
-            i, int(row['imgID']), int(row['annID']), int(row['scID']),
+            i, int(row['annID']), int(row['scID']),
             list(map(int, row['bbox'][1:-1].split(','))),
             row['scale'], int(row['label']), row['catnm'],
             row['new_img_path'], row['new_msk_path'],

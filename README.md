@@ -13,6 +13,13 @@ We treat object placement as a graph completion problem and propose a novel grap
 ![GracoNet](.github/GracoNet.png)
 
 
+# New Updates
+
+- **Sep 29, 2022**
+
+Change to use the latest version of the official [OPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) dataset instead of an old version.
+
+
 # Model Zoo
 We provide models for TERSE [[arXiv]](https://arxiv.org/abs/1904.05475), PlaceNet [[arXiv]](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123580562.pdf), and our GracoNet [[arXiv]](https://arxiv.org/abs/2207.11464):
 
@@ -97,17 +104,15 @@ cd ../..
 ```
 
 ## Data preparation
-Download and extract OPA dataset from [bcmi cloud](https://cloud.bcmi.sjtu.edu.cn/sharing/anOViiqDN) or [baidu disk](https://pan.baidu.com/s/1tl0x55osXG5hNdIaW_ysuQ) (code: a2ux). We expect the directory structure to be the following:
+Download and extract [OPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) dataset from the official link: [google drive](https://drive.google.com/file/d/133Wic_nSqfrIajDnnxwvGzjVti-7Y6PF/view?usp=sharing) or [baidu disk](https://pan.baidu.com/s/1IzVLcXWLFgFR4GAbxZUPkw) (code: a982). We expect the directory structure to be the following:
 ```
 <PATH_TO_OPA>
-  bg/                # background images
-  fg/                # foreground images with masks
-  com_pic/           # composite images with masks
-  train_data.csv     # train annotation
-  test_data.csv      # test annotation
+  background/       # background images
+  foreground/       # foreground images with masks
+  composite/        # composite images with masks
+  train_set.csv     # train annotation
+  test_set.csv      # test annotation
 ```
-
-**Note**: The above directory structure is different from the officially released [OPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) dataset. However, the two versions are essentially the same.
 
 Then, make some preprocessing:
 ```
@@ -117,7 +122,9 @@ You will see some new files and directories:
 ```
 <PATH_TO_OPA>
   com_pic_testpos299/          # test set positive composite images (resized to 299)
+  train_data.csv               # transformed train annotation
   train_data_pos.csv           # train annotation for positive samples
+  test_data.csv                # transformed test annotation
   test_data_pos.csv            # test annotation for positive samples
   test_data_pos_unique.csv     # test annotation for positive samples with different fg/bg pairs 
 ```

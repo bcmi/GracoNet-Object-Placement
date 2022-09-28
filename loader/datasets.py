@@ -19,7 +19,7 @@ class OPADst1(OPABasicDataset):
         super().__init__(size, mode_type, data_root)
 
     def __getitem__(self, index):
-        index_, filename_, imgid, annid, scid, bbox, scale, label, catnm, bg_img, fg_img, fg_msk, comp_img, comp_msk = super().__getitem__(index)
+        index_, annid, scid, bbox, scale, label, catnm, bg_img, fg_img, fg_msk, comp_img, comp_msk = super().__getitem__(index)
 
         bg_img_arr = np.array(bg_img, dtype=np.uint8)
         fg_img_arr = np.array(fg_img, dtype=np.uint8)
@@ -97,7 +97,7 @@ class OPADst3(OPABasicDataset):
         super().__init__(size, mode_type, data_root)
 
     def __getitem__(self, index):
-        index_, filename_, imgid, annid, scid, bbox, scale, label, catnm, bg_img, fg_img, fg_msk, comp_img, comp_msk = super().__getitem__(index)
+        index_, annid, scid, bbox, scale, label, catnm, bg_img, fg_img, fg_msk, comp_img, comp_msk = super().__getitem__(index)
 
         comp_w, comp_h = comp_img.size[0], comp_img.size[1]
 

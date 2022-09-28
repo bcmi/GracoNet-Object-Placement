@@ -16,9 +16,9 @@ class OPABasicDataset(Dataset):
         self.size = size
         self.mode_type = mode_type
         self.data_root = data_root
-        self.coco_imgdir = os.path.join(data_root, "bg")
-        self.fg_dir = os.path.join(data_root, "fg/images")
-        self.fg_msk_dir = os.path.join(data_root, "fg/mask")
+        self.bg_dir = os.path.join(data_root, "background")
+        self.fg_dir = os.path.join(data_root, "foreground")
+        self.fg_msk_dir = os.path.join(data_root, "foreground")
 
         if mode_type == "train":
             csv_file = os.path.join(data_root, "train_data.csv")
@@ -38,14 +38,13 @@ class OPABasicDataset(Dataset):
         return len(self.data)
 
     def __getitem__(self, index):
-        index_, imgid, annid, scid, bbox, scale, label, catnm, img_path, msk_path = self.data[index]
+        index_, annid, scid, bbox, scale, label, catnm, img_path, msk_path = self.data[index]
 
-        bg_path = os.path.join(self.coco_imgdir, "%012d.jpg" % (scid))
-        fg_path = os.path.join(self.fg_dir, "fg_{}.jpg".format(annid))
-        fg_mask_path = os.path.join(self.fg_msk_dir, "fg_mask_{}.jpg".format(annid))
+        bg_path = os.path.join(self.bg_dir, catnm, "{}.jpg".format(scid))
+        fg_path = os.path.join(self.fg_dir, catnm, "{}.jpg".format(annid))
+        fg_mask_path = os.path.join(self.fg_msk_dir, catnm, "mask_{}.jpg".format(annid))
         img_path = os.path.join(self.data_root, img_path)
         msk_path = os.path.join(self.data_root, msk_path)
-        filename_ = img_path.split('/')[-1].split('.')[0]
 
         bg_img = Image.open(bg_path).convert('RGB')
         fg_img = Image.open(fg_path).convert('RGB')
@@ -57,4 +56,4 @@ class OPABasicDataset(Dataset):
         # assert (math.fabs((bbox[2] * fg_img.size[1]) / (bbox[3] * fg_img.size[0]) - 1.0) < self.error_bar)
         assert (bbox[0] + bbox[2] <= bg_img.size[0] and bbox[1] + bbox[3] <= bg_img.size[1])
 
-        return index_, filename_, imgid, annid, scid, bbox, scale, label, catnm, bg_img, fg_img, fg_msk, comp_img, comp_msk
+        return index_, annid, scid, bbox, scale, label, catnm, bg_img, fg_img, fg_msk, comp_img, comp_msk
