@@ -8,9 +8,12 @@ Official PyTorch Implementation for **GracoNet** (**GRA**ph **CO**mpletion **NET
 > Siyuan Zhou, Liu Liu, Li Niu, Liqing Zhang<br>
 > Accepted by **ECCV2022**.
 
-We treat object placement as a graph completion problem and propose a novel graph completion module (GCM). The background scene is represented by a graph with multiple nodes at different spatial locations with various receptive fields. The foreground object is encoded as a special node that should be inserted at a reasonable place in this graph. We also design a dual-path framework upon GCM to fully exploit annotated composite images, which successfully generates plausible and diversified object placement. GracoNet achieves **0.847** accuracy on OPA dataset.
+We treat object placement as a graph completion problem and propose a novel graph completion module (GCM). The background scene is represented by a graph with multiple nodes at different spatial locations with various receptive fields. The foreground object is encoded as a special node that should be inserted at a reasonable place in this graph. We also design a dual-path framework upon GCM to fully exploit annotated composite images, which successfully generates plausible and diversified object placement. GracoNet achieves 0.847 accuracy on OPA dataset.
+
+**For practical usage, we recommend using our [FOPA](https://github.com/bcmi/FOPA-Fast-Object-Placement-Assessment), which is more stable and effective.**
 
 ![GracoNet](.github/GracoNet.png)
+
 
 
 # New Updates
