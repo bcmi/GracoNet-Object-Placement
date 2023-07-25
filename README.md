@@ -10,7 +10,6 @@ Official PyTorch Implementation for **GracoNet** (**GRA**ph **CO**mpletion **NET
 
 We treat object placement as a graph completion problem and propose a novel graph completion module (GCM). The background scene is represented by a graph with multiple nodes at different spatial locations with various receptive fields. The foreground object is encoded as a special node that should be inserted at a reasonable place in this graph. We also design a dual-path framework upon GCM to fully exploit annotated composite images, which successfully generates plausible and diversified object placement. GracoNet achieves 0.847 accuracy on OPA dataset.
 
-**For practical usage, we recommend using our [FOPA](https://github.com/bcmi/FOPA-Fast-Object-Placement-Assessment), which is more stable and effective.**
 
 ![GracoNet](.github/GracoNet.png)
 
@@ -69,6 +68,26 @@ We provide models for TERSE [[arXiv]](https://arxiv.org/abs/1904.05475), PlaceNe
       <td><a href="https://cloud.bcmi.sjtu.edu.cn/sharing/5y74jrw2a">bcmi cloud</a>&nbsp;|&nbsp;<a href="https://pan.baidu.com/s/1qzEAjHjSarvst5eY3V2Xaw">baidu disk</a>&nbsp;(code: 8rqm)</td>
       <td>graconet.zip</td>
       <td>185M</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td><a href='https://openreview.net/pdf?id=hwHBaL7wur'>IOPRE</a></td>
+      <td>0.895</td>
+      <td>21.59</td>
+      <td>0.214</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td><a href='https://github.com/bcmi/FOPA-Fast-Object-Placement-Assessment'>FOPA</a></td>
+      <td>0.932</td>
+      <td>19.76</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
     </tr>
   </tbody>
 </table>
