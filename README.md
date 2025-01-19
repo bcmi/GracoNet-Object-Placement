@@ -211,7 +211,7 @@ You could find summarized results at ```result/YOUR_EXPERIMENT_NAME/***_resall.t
 # Other Resources
 
 + [Awesome-Object-Placement](https://github.com/bcmi/Awesome-Object-Placement)
-+ [Awesome-Image-Composition](https://github.com/bcmi/Awesome-Image-Composition)
++ [Awesome-Image-Composition](https://github.com/bcmi/Awesome-Object-Insertion)
 
 
 # Acknowledgements
