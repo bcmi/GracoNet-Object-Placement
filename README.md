@@ -47,7 +47,7 @@ We provide models for TERSE [[arXiv]](https://arxiv.org/abs/1904.05475), PlaceNe
       <td>0.679</td>
       <td>46.94</td>
       <td>0</td>
-      <td><a href="https://cloud.bcmi.sjtu.edu.cn/sharing/nTCaw7sEo">bcmi cloud</a>&nbsp;|&nbsp;<a href="https://pan.baidu.com/s/14mA7j34flDnpB9-MA7_4IQ">baidu disk</a>&nbsp;(code: js71)</td>
+      <td><a href="https://www.dropbox.com/scl/fi/6b2ddd2j88mwjv9ac42h6/terse.zip?rlkey=s3uyf8y339161t66uc42rwamg&st=c4ud4n7q&dl=0">Dropbox</a>&nbsp;|&nbsp;<a href="https://pan.baidu.com/s/14mA7j34flDnpB9-MA7_4IQ">baidu disk</a>&nbsp;(code: js71)</td>
       <td>terse.zip</td>
       <td>51M</td>
     </tr>
@@ -57,7 +57,7 @@ We provide models for TERSE [[arXiv]](https://arxiv.org/abs/1904.05475), PlaceNe
       <td>0.683</td>
       <td>36.69</td>
       <td>0.160</td>
-      <td><a href="https://cloud.bcmi.sjtu.edu.cn/sharing/sJ68J02yV">bcmi cloud</a>&nbsp;|&nbsp;<a href="https://pan.baidu.com/s/1ARGL_Z6cczEAXfEZZvxIjQ">baidu disk</a>&nbsp;(code: y0gh)</td>
+      <td><a href="https://www.dropbox.com/scl/fi/1cscjp3fn62de6udg7lxp/placenet.zip?rlkey=m4ne1qabksppol7n863ktou2o&st=30f8qo46&dl=0">Dropbox</a>&nbsp;|&nbsp;<a href="https://pan.baidu.com/s/1ARGL_Z6cczEAXfEZZvxIjQ">baidu disk</a>&nbsp;(code: y0gh)</td>
       <td>placenet.zip</td>
       <td>86M</td>
     </tr>
@@ -67,7 +67,7 @@ We provide models for TERSE [[arXiv]](https://arxiv.org/abs/1904.05475), PlaceNe
       <td>0.847</td>
       <td>27.75</td>
       <td>0.206</td>
-      <td><a href="https://cloud.bcmi.sjtu.edu.cn/sharing/5y74jrw2a">bcmi cloud</a>&nbsp;|&nbsp;<a href="https://pan.baidu.com/s/1qzEAjHjSarvst5eY3V2Xaw">baidu disk</a>&nbsp;(code: 8rqm)</td>
+      <td><a href="https://www.dropbox.com/scl/fi/uas2l887dsamuyr0uxcdm/graconet.zip?rlkey=nkt15hec0yexffwoo1bsretx4&st=hj1oja0s&dl=0">Dropbox</a>&nbsp;|&nbsp;<a href="https://pan.baidu.com/s/1qzEAjHjSarvst5eY3V2Xaw">baidu disk</a>&nbsp;(code: 8rqm)</td>
       <td>graconet.zip</td>
       <td>185M</td>
     </tr>
@@ -128,7 +128,7 @@ cd ../..
 ```
 
 ## Data preparation
-Download and extract [OPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) dataset from the official link: [google drive](https://drive.google.com/file/d/133Wic_nSqfrIajDnnxwvGzjVti-7Y6PF/view?usp=sharing) or [baidu disk](https://pan.baidu.com/s/1IzVLcXWLFgFR4GAbxZUPkw) (code: a982). We expect the directory structure to be the following:
+Download and extract [OPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) dataset from the official link: [Dropbox](https://www.dropbox.com/scl/fi/va50b8pltd1apsqofpquj/OPA.rar?rlkey=uyfuxqdnoaikwjizq1brobebz&st=92ziny9n&dl=0) or [baidu disk](https://pan.baidu.com/s/1IzVLcXWLFgFR4GAbxZUPkw) (code: a982). We expect the directory structure to be the following:
 ```
 <PATH_TO_OPA>
   background/       # background images
@@ -188,7 +188,7 @@ python infer.py --data_root <PATH_TO_OPA> --expid graconet --epoch 11 --eval_typ
 The procedure of inferring our provided baseline models are similar. Remember to use ```--epoch 11``` for TERSE and ```--epoch 9``` for PlaceNet.
 
 ## Evaluation
-We extend [SimOPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) as a binary classifier to distingush between reasonable and unreasonable object placements. To evaluate accuracy via the classifier, please 1) download the faster-rcnn model pretrained on visual genome from [google drive](https://drive.google.com/file/d/18n_3V1rywgeADZ3oONO0DsuuS9eMW6sN/view) (provided by [Faster-RCNN-VG](https://github.com/shilrley6/Faster-R-CNN-with-model-pretrained-on-Visual-Genome)) to ```faster-rcnn/models/faster_rcnn_res101_vg.pth```, 2) download the pretrained binary classifier model from [bcmi cloud](https://cloud.bcmi.sjtu.edu.cn/sharing/XPEgkSHdQ) or [baidu disk](https://pan.baidu.com/s/1skFRfLyczzXUpp-6tMHArA) (code: 0qty) to ```BINARY_CLASSIFIER_PATH```, and 3) run:
+We extend [SimOPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) as a binary classifier to distingush between reasonable and unreasonable object placements. To evaluate accuracy via the classifier, please 1) download the faster-rcnn model pretrained on visual genome from [Dropbox](https://www.dropbox.com/scl/fi/dnmr882d21qbggfta5jvo/faster_rcnn_res101_vg.pth?rlkey=e6n1zf1se8ccgdufkqfb4oa5r&st=1jaftrzb&dl=0) (provided by [Faster-RCNN-VG](https://github.com/shilrley6/Faster-R-CNN-with-model-pretrained-on-Visual-Genome)) to ```faster-rcnn/models/faster_rcnn_res101_vg.pth```, 2) download the pretrained binary classifier model from [Dropbox](https://www.dropbox.com/scl/fi/0ld9dbpydghszm48j21ei/best-acc.pth?rlkey=60ncpezciy3r8lhstwwcgolv9&st=8jxbxcur&dl=0) or [baidu disk](https://pan.baidu.com/s/1skFRfLyczzXUpp-6tMHArA) (code: 0qty) to ```BINARY_CLASSIFIER_PATH```, and 3) run:
 ```
 sh script/eval_acc.sh <YOUR_EXPERIMENT_NAME> <EPOCH_TO_EVALUATE> <BINARY_CLASSIFIER_PATH>
 ```
